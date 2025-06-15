@@ -1,0 +1,96 @@
+/* ===== 기본 테마 ===== */
+:root{
+  --bg:#f7f7fa;
+  --surface:#ffffff;
+  --primary:#ff9800;          /* 메인 주황 */
+  --primary-dark:#f57c00;     /* Hover 주황 */
+  --danger:#ff4d4f;
+  --text:#1f1f1f;
+  --radius:10px;
+  --shadow:0 2px 8px rgba(0,0,0,.06);
+  --transition:.25s;
+  font-family:'Pretendard',system-ui,sans-serif;
+}
+
+/* ===== 레이아웃 ===== */
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);}
+header{position:sticky;top:0;z-index:10;background:var(--surface);box-shadow:var(--shadow);}
+.nav{max-width:1024px;margin:auto;padding:12px 20px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+main{max-width:1024px;margin:32px auto;padding:0 20px;}
+
+/* ===== 버튼 ===== */
+button{cursor:pointer;border:none;border-radius:var(--radius);padding:10px 18px;font-size:1rem;transition:var(--transition);}
+.btn-primary{background:var(--primary);color:#fff;}
+.btn-primary:hover{background:var(--primary-dark);}
+.btn-outline{background:transparent;border:1.5px solid var(--primary);color:var(--primary);}
+.btn-outline:hover{background:var(--primary);color:#fff;}
+.btn-danger{background:var(--danger);color:#fff;}
+.btn-danger:hover{opacity:.9;}
+
+/* 연한·작은 버튼 (시간/인원용) */
+.btn-secondary{
+  background:#ffe0b2;            /* 연한 주황 */
+  color:var(--primary-dark);
+  border:none;
+  border-radius:var(--radius);
+  padding:6px 12px;
+  font-size:.95rem;
+  cursor:pointer;
+  transition:var(--transition);
+}
+.btn-secondary:hover{opacity:.9;}
+
+input,select{padding:8px 10px;margin-top:6px;border:1px solid #ccc;border-radius:var(--radius);font-size:1rem;width:100%;box-sizing:border-box;}
+label{display:block;margin-top:14px;font-weight:600;}
+
+.card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;text-align:center;transition:transform .15s;}
+.card:hover{transform:translateY(-4px);}
+.card.disabled{opacity:.5;filter:grayscale(80%);pointer-events:none;}
+
+.banner{margin-top:18px;padding:12px;border-radius:var(--radius);background:#fff0d0;color:#b36b00;text-align:center;}
+
+/* === Reservation Page Helper === */
+.step-card{
+  background:var(--surface);
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-top:24px;
+  max-width:320px;
+  width:100%;
+}
+.step-card h3{margin:0 0 12px;font-size:1.05rem;font-weight:700;text-align:center;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.progress-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:#d7d7d7;transition:.3s;
+}
+.progress-dot.active{background:var(--primary);}
+.progress-bar{
+  display:flex;justify-content:center;gap:8px;margin-top:18px;
+}
+
+
+.hero{
+  text-align:center;
+  padding:80px 20px;
+  border-radius:var(--radius);
+  background:#ffffff;            
+  box-shadow:var(--shadow);
+}
+.hero h1{font-size:2.4rem;margin:0;color:var(--text);}
+.hero p{margin-top:12px;font-size:1.1rem;color:#555;}
+
+.Toastify__toast{font-family:inherit;}
+
+@media(max-width:600px){
+  .nav{justify-content:flex-start;}
+  button{flex:1 1 auto;}
+}
+
+.narrow-btn   { width:140px;padding:8px 12px;font-size:.95rem; }
+.tiny-btn     { width: 80px;padding:6px 10px;font-size:.9rem; }
+.stepper-btn  { width:34px;height:34px;padding:0;font-size:1.1rem; }
+.form-narrow  { max-width:300px;width:100%; }
+.input-narrow { max-width:260px;width:100%; }
+.card-narrow  { width:180px; }
